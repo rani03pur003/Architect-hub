@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architect Hub</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        /* Background design */
+        body {
+            background: url('https://via.placeholder.com/1500x1000?text=Architecture+Background') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        /* Card image sizing */
+        .resource-card img, .directory-card img, .card img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            background-color: #eaeaea;
+            border-radius: 10px;
+        }
+
+        .directory-card img {
+            height: 150px;
+        }
+
+        /* Section titles */
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+        }
+
+        .card-body a {
+            color: #fff;
+        }
+
+        .card-body a:hover {
+            color: #5cb85c;
+        }
+
+        /* Architect Profile Styles */
+        .architect-profile img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .architect-profile .card-body {
+            background-color: #222;
+            color: #fff;
+        }
+
+        /* Pile-like Design */
+        .card-pile {
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .card-pile .card {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform: translateY(0px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card-pile .card:nth-child(1) {
+            top: 0;
+            z-index: 1;
+        }
+
+        .card-pile .card:nth-child(2) {
+            top: 20px;
+            z-index: 2;
+        }
+
+        .card-pile .card:nth-child(3) {
+            top: 40px;
+            z-index: 3;
+        }
+
+        .card-pile .card:nth-child(4) {
+            top: 60px;
+            z-index: 4;
+        }
+
+        .card-pile:hover .card {
+            transform: translateY(-10px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Architect Hub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Explore Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#directory">Directory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resources">Resources</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container text-center mt-5">
+        <h1 class="display-4">Welcome to Architect Hub</h1>
+        <p class="lead">Connecting Architects, Engineers, Clients, Builders, and Real Estate Sellers Across Nepal</p>
+    </div>
+
+    <!-- Explore Projects Section -->
+    <section id="projects" class="container mt-5">
+        <h2>Explore Projects</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://www.archdaily.com/images/cache/613h45c678ee.jpg" class="card-img-top" alt="Residential Design">
+                    <div class="card-body">
+                        <h5 class="card-title">Residential Building Design</h5>
+                        <p class="card-text">Looking for an architect to design a 2-story house in Kathmandu.</p>
+                        <a href="https://www.archdaily.com/" class="btn btn-primary" target="_blank">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://media.archinect.com/files/9a/9a73970f8f098db09ca35f9a44e7d7d2.jpg" class="card-img-top" alt="Office Renovation">
+                    <div class="card-body">
+                        <h5 class="card-title">Commercial Office Renovation</h5>
+                        <p class="card-text">Need an engineer for structural analysis and design adjustments.</p>
+                        <a href="https://www.fosterandpartners.com/" class="btn btn-primary" target="_blank">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://www.archdaily.com/images/cache/77db3f5a8b56bc13c8d2a81b23d9b3d2.jpg" class="card-img-top" alt="Apartment Development">
+                    <div class="card-body">
+                        <h5 class="card-title">Luxury Apartment Development</h5>
+                        <p class="card-text">Seeking collaboration with builders and real estate sellers.</p>
+                        <a href="https://www.archdaily.com/" class="btn btn-primary" target="_blank">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architects Directory Section with Pile Effect -->
+    <section id="directory" class="container mt-5">
+        <h2>Famous Architects</h2>
+        <div class="card-pile">
+            <!-- Zaha Hadid -->
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200?text=Zaha+Hadid" class="card-img-top" alt="Zaha Hadid">
+                <div class="card-body">
+                    <h5 class="card-title">Zaha Hadid</h5>
+                    <p>Learn more about Zaha Hadid's revolutionary work in architecture, including the London Aquatics Centre and the Guangzhou Opera House.</p>
+                    <a href="https://www.zaha-hadid.com/" class="btn btn-primary" target="_blank">Explore Work</a>
+                </div>
+            </div>
+            <!-- I. M. Pei -->
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200?text=IM+Pei" class="card-img-top" alt="I. M. Pei">
+                <div class="card-body">
+                    <h5 class="card-title">I. M. Pei</h5>
+                    <p>Explore the designs of the renowned architect I. M. Pei, known for his work on the Louvre Pyramid in Paris and the Bank of China Tower in Hong Kong.</p>
+                    <a href="https://www.impei.com/" class="btn btn-primary" target="_blank">Explore Work</a>
+                </div>
+            </div>
+            <!-- Charles Correa -->
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200?text=Charles+Correa" class="card-img-top" alt="Charles Correa">
+                <div class="card-body">
+                    <h5 class="card-title">Charles Correa</h5>
+                    <p>Discover the influential works of Indian architect Charles Correa, including the Jawahar Kala Kendra in Jaipur.</p>
+                    <a href="https://www.charlescorrea.org/" class="btn btn-primary" target="_blank">Explore Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="container mt-5">
+        <h2>Architecture Resources</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card resource-card">
+                    <img src="https://via.placeholder.com/400x200?text=Architecture+Books" class="card-img-top" alt="Books">
+                    <div class="card-body">
+                        <h5 class="card-title">Books</h5>
+                        <p>Discover must-read books on architecture.</p>
+                        <a href="https://www.architecturaldigest.com/story/best-architecture-books" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card resource-card">
+                    <img src="https://via.placeholder.com/400x200?text=Magazines" class="card-img-top" alt="Magazines">
+                    <div class="card-body">
+                        <h5 class="card-title">Architecture Magazines</h5>
+                        <p>Stay updated with the latest trends in architecture with leading magazines.</p>
+                        <a href="https://www.dezeen.com/magazine/" class="btn btn-primary" target="_blank">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card resource-card">
+                    <img src="https://via.placeholder.com/400x200?text=Architecture+Firms" class="card-img-top" alt="Firms">
+                    <div class="card-body">
+                        <h5 class="card-title">Architecture Firms</h5>
+                        <p>Find the top architecture firms that push boundaries and shape modern cities.</p>
+                        <a href="https://www.fosterandpartners.com" class="btn btn-primary" target="_blank">Explore Firms</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center mt-5 py-3 bg-dark">
+        <p>&copy; 2025 Architect Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
